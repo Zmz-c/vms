@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend><h1>新增政策</h1></legend>
+</fieldset>
+
+<form class="layui-form" action="/addzc" method="post">
+  <div class="layui-form-item">
+    <label class="layui-form-label">请输入政策标题</label>
+    <div class="layui-input-block">
+      <input type="text" name="zcTitle" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">请输入作者</label>
+    <div class="layui-input-block">
+      <input type="text" name="zcAuthor" lay-verify="title" autocomplete="off" placeholder="请输入作者" class="layui-input">
+    </div>
+  </div>
+
+  <textarea class="layui-textarea" id="addNews" style="display: none" name="zcText">
+  </textarea>
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-primary layui-border-orange layui-btn-lg" >提交</button>
+  </div>
+</form>
+
+<script src="layui/layui.js" charset="utf-8"></script>
+<script>
+  layui.use('layedit', function(){
+    var layedit = layui.layedit
+            ,$ = layui.jquery;
+    var index = layedit.build('addNews');
+  });
+</script>
+
+</body>
+</html>
